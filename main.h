@@ -50,5 +50,8 @@ void push(stack_t **stack, unsigned int param);
 void pall(stack_t **stack, unsigned int line_number);
 void handle_error(int errno, char *opcode, unsigned int line, char *buffer);
 void handle_cerror(int errno, char *opcode, unsigned int line);
+int check_digit(char *str);
+int check_param(char *param);
+void check_access_rights(char *filename);
 
 #endif /* MAIN_H */
