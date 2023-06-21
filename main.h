@@ -60,5 +60,6 @@ void check_access_rights(char *filename);
 void handle_uerror(int errno, unsigned int line);
 void free_stack(void);
 void check_args_num(int argint);
+FILE *open_file(char *filename);
 
 #endif /* MAIN_H */

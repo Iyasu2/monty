@@ -18,12 +18,7 @@ int main(int argint, char *argstr[])
 
 	filename = argstr[1];
 	check_args_num(argint);
-	fd = fopen(filename, "r");
-	if (!fd)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", filename);
-		exit(EXIT_FAILURE);
-	}
+	fd = open_file(filename);
 
 	while ((read = getline(&buffer, &line_len, fd)) != -1)
 	{
