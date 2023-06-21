@@ -18,6 +18,8 @@ void handle_error(int errno, char *opcode, unsigned int line, char *buffer)
 	else
 		return;
 
+	free_stack();
+
 	if (buffer)
 		free(buffer);
 
