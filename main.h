@@ -12,6 +12,10 @@
 /* Usage Errors */
 #define ERR_ARG_USG	200
 #define ERR_PUSH_USG	201
+#define ERR_PINT_USG	202
+#define ERR_POP_USG	203
+#define ERR_SWAP_USG	204
+#define ERR_ADD_USG	205
 
 #include <ctype.h>
 #include <fcntl.h>
@@ -68,5 +72,10 @@ void free_stack(void);
 void check_args_num(int argint);
 FILE *open_file(char *filename);
 void push_queue(stack_t **stack, unsigned int param);
+void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+unsigned int count_stack(stack_t *stack);
 
 #endif /* MAIN_H */

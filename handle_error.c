@@ -66,6 +66,18 @@ void handle_uerror(int errno, unsigned int line)
 		case ERR_PUSH_USG:
 			fprintf(stderr, "L%d: usage: push integer\n", line);
 			break;
+		case ERR_PINT_USG:
+			fprintf(stderr, "L%d: can't pint, stack empty\n", line);
+			break;
+		case ERR_POP_USG:
+			fprintf(stderr, "L%d: can't pop an empty stack\n", line);
+			break;
+		case ERR_SWAP_USG:
+			fprintf(stderr, "L%d: can't swap, stack too short\n", line);
+			break;
+		case ERR_ADD_USG:
+			fprintf(stderr, "L%d: can't add, stack too short\n", line);
+			break;
 		default:
 			break;
 	}

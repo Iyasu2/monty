@@ -13,6 +13,10 @@ void (*func_list(char *s))(stack_t **, unsigned int)
 		{ "push", push },
 		{ "push_queue", push_queue },
 		{ "pall", pall },
+		{ "pint", pint },
+		{ "pop", pop },
+		{ "swap", swap },
+		{ "add", add },
 		{ NULL, NULL }
 	};
 	int i = 0;
