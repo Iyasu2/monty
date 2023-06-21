@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
   * check_digit - entry point
   * @str: The string checked

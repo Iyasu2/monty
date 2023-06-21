@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
   * main - entry point
@@ -10,7 +11,7 @@
 int main(int argint, char *argstr[])
 {
 	FILE *fd = NULL;
-	int read = 0;
+	int read = 0, op_status = 0;
 	char *filename = NULL, *op_code = NULL, *op_param = NULL, *buffer = NULL;
 	size_t line_len = 0;
 	unsigned int line_num = 1;
@@ -18,8 +19,7 @@ int main(int argint, char *argstr[])
 	filename = argstr[1];
 	if (argint != 2)
 	{
-		fprintf(stderr, "USAGE: monty file\n", filename);
-		exit(EXIT_FAILURE);
+		handle_error(ERR_ARG_USG, NULL, 0, NULL);
 	}
 	fd = fopen(filename, "r");
 	if (!fd)
@@ -38,8 +38,16 @@ int main(int argint, char *argstr[])
 				++line_num;
 				continue;
 			}
+		
+			op_param = strtok(NULL, "\t\n ");
+			op_status = execute(op_code, op_param, line_num, op_status);
+
+			if (op_status >= 100 && op_status < 400)
+			{
+				fclose(fd);
+				handle_error(op_status, op_code, line_num, buffer);
+			}
 		}
-		op_param = strtok(NULL, "\t\n ");
 
 		++line_num;
 	}

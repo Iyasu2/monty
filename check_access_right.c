@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
   * check_access_rights - entry point
   * @filename: name of file

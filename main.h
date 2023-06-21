@@ -4,6 +4,10 @@
 /* Common Errors */
 #define ERR_BAD_INST	100
 
+/* Usage Errors */
+#define ERR_ARG_USG	300
+#define ERR_PUSH_USG	301
+
 #include <ctype.h>
 #include <fcntl.h>
 #include <stdlib.h>
@@ -53,5 +57,6 @@ void handle_cerror(int errno, char *opcode, unsigned int line);
 int check_digit(char *str);
 int check_param(char *param);
 void check_access_rights(char *filename);
+void handle_uerror(int errno, unsigned int line);
 
 #endif /* MAIN_H */
