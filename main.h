@@ -1,13 +1,17 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+/* Constants */
+#define STACK	300
+#define QUEUE	301
+
 /* Common Errors */
 #define ERR_BAD_INST	100
 #define ERR_BAD_MALL	101
 
 /* Usage Errors */
-#define ERR_ARG_USG	300
-#define ERR_PUSH_USG	301
+#define ERR_ARG_USG	200
+#define ERR_PUSH_USG	201
 
 #include <ctype.h>
 #include <fcntl.h>
@@ -63,6 +67,6 @@ void handle_uerror(int errno, unsigned int line);
 void free_stack(void);
 void check_args_num(int argint);
 FILE *open_file(char *filename);
-
+void push_queue(stack_t **stack, unsigned int param);
 
 #endif /* MAIN_H */

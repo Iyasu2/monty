@@ -11,6 +11,7 @@ void (*func_list(char *s))(stack_t **, unsigned int)
 {
 	instruction_t command[] = {
 		{ "push", push },
+		{ "push_queue", push_queue },
 		{ "pall", pall },
 		{ NULL, NULL }
 	};

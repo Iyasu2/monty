@@ -15,7 +15,9 @@ int execute(char *op_code, char *op_param, unsigned int line, int m)
 	void (*oprt)(stack_t **, unsigned int);
 
 	if (strcmp(op_code, "stack") == 0)
-			return (400);
+		return (STACK);
+	else if (strcmp(op_code, "queue") == 0)
+		return (QUEUE);
 	oprt = func_list(op_code);
 	if (oprt)
 	{
@@ -24,6 +26,9 @@ int execute(char *op_code, char *op_param, unsigned int line, int m)
 			status_op = check_param(op_param);
 			if (status_op == ERR_PUSH_USG)
 				return (ERR_PUSH_USG);
+
+			if (m != 0 && m == QUEUE)
+				oprt = func_list("push_queue");
 
 			oprt(&head, atoi(op_param));
 		}

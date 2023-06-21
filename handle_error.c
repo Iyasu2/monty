@@ -13,7 +13,7 @@ void handle_error(int errno, char *opcode, unsigned int line, char *buffer)
 {
 	if (errno >= 100 && errno < 200)
 		handle_cerror(errno, opcode, line);
-	else if (errno >= 300 && errno <= 310)
+	else if (errno >= 200 && errno <= 210)
 		handle_uerror(errno, line);
 	else
 		return;
