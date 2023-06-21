@@ -20,7 +20,7 @@ int main(int argint, char *argstr[])
 	check_args_num(argint);
 	fd = open_file(filename);
 
-	while ((read = getline(&buffer, &line_len, fd)) != -1)
+	while ((read = _getline(&buffer, &line_len, fd)) != -1)
 	{
 		op_code = strtok(buffer, "\t\n ");
 		if (op_code)
