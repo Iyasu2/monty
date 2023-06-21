@@ -14,6 +14,8 @@ int execute(char *op_code, char *op_param, unsigned int line, int m)
 	int status_op = 0;
 	void (*oprt)(stack_t **, unsigned int);
 
+	if (strcmp(op_code, "stack") == 0)
+			return (400);
 	oprt = func_list(op_code);
 	if (oprt)
 	{

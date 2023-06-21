@@ -3,6 +3,7 @@
 
 /* Common Errors */
 #define ERR_BAD_INST	100
+#define ERR_BAD_MALL	101
 
 /* Usage Errors */
 #define ERR_ARG_USG	300
