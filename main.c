@@ -15,7 +15,7 @@ int main(int argint, char *argstr[])
 	size_t line_len = 0;
 	unsigned int line_num = 1;
 
-	filename = args[1];
+	filename = argstr[1];
 	if (argint != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n", filename);

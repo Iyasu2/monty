@@ -12,6 +12,7 @@
 int execute(char *op_code, char *op_param, unsigned int line, int m)
 {
 	int status_op = 0;
+	void (*oprt)(stack_t **, unsigned int);
 
 	oprt = func_list(op_code);
 	if (oprt)

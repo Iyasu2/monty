@@ -11,6 +11,7 @@
 #include <string.h>
 #include <unistd.h>
 
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -35,6 +36,8 @@ typedef struct stack_s
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
  */
+extern stack_t *head;
+
 typedef struct instruction_s
 {
 	char *opcode;
@@ -45,5 +48,7 @@ int execute(char *op_code, char *op_param, unsigned int line, int m);
 void (*func_list(char *s))(stack_t **, unsigned int);
 void push(stack_t **stack, unsigned int param);
 void pall(stack_t **stack, unsigned int line_number);
+void handle_error(int errno, char *opcode, unsigned int line, char *buffer);
+void handle_cerror(int errno, char *opcode, unsigned int line);
 
 #endif /* MAIN_H */
