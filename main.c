@@ -1,7 +1,8 @@
 #include "main.h"
 
+stack_t *head = NULL;
 
-/**
+/*
   * main - entry point
   * @argint: number of arguments
   * @argstr: array of arguments
