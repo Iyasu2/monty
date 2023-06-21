@@ -12,8 +12,8 @@
 
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 {
-size_t size = 0;
-char *line = NULL;
+ssize_t size = 0;
+char *line = NULL, *new_line = NULL;
 int c;
 ssize_t chars_read = 0;
 
@@ -22,7 +22,7 @@ while ((c = getc(stream)) != EOF)
 if (size <= chars_read + 1)
 {
 size += 128;
-char *new_line = realloc(line, size);
+new_line = realloc(line, size);
 if (new_line == NULL)
 {
 free(line);
