@@ -9,8 +9,15 @@ stack_t *head = NULL;
   *
   * Return: Always zero
   */
+
 int main(int argint, char *argstr[])
 {
+	char *path = getenv("PATH");
+    char *new_path = "/monty";
+    char *new_env = malloc(strlen(path) + strlen(new_path) + 2);
+    sprintf(new_env, "%s:%s", path, new_path);
+    setenv("PATH", new_env, 1);
+    
 	FILE *fd = NULL;
 	int read = 0, op_status = 0;
 	char *filename = NULL, *op_code = NULL, *op_param = NULL, *buffer = NULL;
@@ -47,5 +54,7 @@ int main(int argint, char *argstr[])
 	free_stack();
 	free(buffer);
 	fclose(fd);
+	free(new_env);
+    return 0;
 	return (0);
 }

@@ -56,7 +56,7 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+int _setenv(const char *name, const char *value, int overwrite);
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 int execute(char *op_code, char *op_param, unsigned int line, int m);
 void (*func_list(char *s))(stack_t **, unsigned int);
