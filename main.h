@@ -10,12 +10,19 @@
 #define ERR_BAD_MALL	101
 
 /* Usage Errors */
-#define ERR_ARG_USG	200
+#define ERR_ARG_USG		200
 #define ERR_PUSH_USG	201
 #define ERR_PINT_USG	202
-#define ERR_POP_USG	203
+#define ERR_POP_USG		203
 #define ERR_SWAP_USG	204
-#define ERR_ADD_USG	205
+#define ERR_ADD_USG		205
+#define ERR_SUB_USG		206
+#define ERR_DIV_USG		207
+#define ERR_DIV_ZRO		208
+#define ERR_MUL_USG		209
+#define ERR_MOD_USG		210
+#define ERR_PCH_USG		211
+#define ERR_PCH_EMP		212
 
 #include <ctype.h>
 #include <fcntl.h>
@@ -56,7 +63,7 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-int _setenv(const char *name, const char *value, int overwrite);
+
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 int execute(char *op_code, char *op_param, unsigned int line, int m);
 void (*func_list(char *s))(stack_t **, unsigned int);
@@ -77,5 +84,14 @@ void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 unsigned int count_stack(stack_t *stack);
+void nop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void divide(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
 
 #endif /* MAIN_H */

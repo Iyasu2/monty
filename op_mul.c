@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "main.h"
 
 /**
  * mul - Multiplies the second top element of the stack
