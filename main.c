@@ -12,7 +12,6 @@ stack_t *head = NULL;
 
 int main(int argint, char *argstr[])
 {
-    
 	FILE *fd = NULL;
 	int read = 0, op_status = 0;
 	char *filename = NULL, *op_code = NULL, *op_param = NULL, *buffer = NULL;
