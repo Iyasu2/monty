@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
   * check_args_num - entry point

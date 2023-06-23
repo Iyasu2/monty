@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
   * count_stack - entry point

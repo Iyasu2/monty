@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
   * func_list - entry point
